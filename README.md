@@ -1,6 +1,7 @@
 # Combat Routine Creation Guide
-If you are experienced with combat routine creation already and are just want a summary of each of the different settings skip to #link section.
 This guide will start by introducing the core concepts by demonstrating how to create a basic combat routine explaning how things work along the way.
+
+If you are experienced with combat routine creation already and are just after a summary of each of the different settings skip to the #link section.
 
 ## 1.Getting Started
 Before creating a profile it's first a good idea to get yourself familiar with the core concepts of how a combat routine works. The main purpose of a combat routine is to tell the bot what to do when in combat. 
@@ -50,7 +51,7 @@ Once you have done this it should look something like :
 ![alt text](https://i.imgur.com/U6Ukhxg.png "Sinister Strike") 
 
 Now save the combat routine by closing the ``Combat Sequence Editor`` window, clicking ``Save As`` and giving it a name.
-Example ``.json`` file from following these steps : [1.Tutorial-Rogue-Combat-Routine.json](../1.Tutorial-Rogue-Combat-Routine.json)
+Example ``.json`` file from following these steps : [1.Tutorial-Rogue-Combat-Routine.json](1.Tutorial-Rogue-Combat-Routine.json)
 
 In order to use the newly created combat routine, under the ``Combat Routine`` tab of the ``Bot Config Editor`` put in the file path of where you saved it.
 
@@ -86,7 +87,7 @@ Finally , before we are done we need to make the bot first try to 'Eviscerate' b
 ![alt text](https://i.imgur.com/7G04YHR.png "Power Condition")
 
 Done! Close the editor window and click 'Save As'.
-Example ``.json`` file from following these steps : [2.Tutorial-Rogue-Combat-Routine.json](../2.Tutorial-Rogue-Combat-Routine.json)
+Example ``.json`` file from following these steps : [2.Tutorial-Rogue-Combat-Routine.json](2.Tutorial-Rogue-Combat-Routine.json)
 
 Run the combat bot again and you should see the bot now using ``Eviscerate`` - you are now a combat routine developer!
 
