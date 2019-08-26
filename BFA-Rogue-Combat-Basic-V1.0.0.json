@@ -1,0 +1,199 @@
+{
+  "Description": "Simple Rogue Demo CR",
+  "PlayerClass": 4,
+  "InCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Cheap Shot In Stealth",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Cheap Shot",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 1784,
+            "DurationLeftInMs": 0,
+            "HasAura": true,
+            "TargetType": 1,
+            "ConditionName": "In Stealth",
+            "Enabled": true,
+            "Type": "Aura"
+          },
+          {
+            "SpellAuraId": 1833,
+            "DurationLeftInMs": 5000,
+            "HasAura": false,
+            "TargetType": 2,
+            "ConditionName": "Target is not in cheap shot",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Garrote",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Garrote",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 703,
+            "DurationLeftInMs": 1000,
+            "HasAura": false,
+            "TargetType": 2,
+            "ConditionName": "No Garrote Debuff",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Eviscerate",
+      "SequenceNumber": 2,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Eviscerate",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "Value": 3,
+            "ConditionName": ">= 3 combo points",
+            "Enabled": true,
+            "Type": "SpecialPower"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Sinister Strike",
+      "SequenceNumber": 3,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Sinister Strike",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "Value": 5,
+            "ConditionName": "Below 5 combo points",
+            "Enabled": true,
+            "Type": "SpecialPower"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "PrePullCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 999,
+      "RequiresFacing": false,
+      "Name": "Stealth ",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Stealth",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 1784,
+            "DurationLeftInMs": 0,
+            "HasAura": false,
+            "TargetType": 1,
+            "ConditionName": "Not In Stealth",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "BuffCombatSequence": [
+    {
+      "Enabled": true,
+      "Name": "Deadly Poison",
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Deadly Poison",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 2823,
+            "DurationLeftInMs": 60000,
+            "HasAura": false,
+            "TargetType": 1,
+            "ConditionName": "Does not have deadly poison",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 0
+    }
+  ],
+  "PetMobId": null
+}

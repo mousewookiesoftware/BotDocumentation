@@ -1,0 +1,30 @@
+{
+  "Description": "1. Combat Routine Created In Tutorials",
+  "PlayerClass": "Rogue",
+  "InCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Sinister Strike",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Sinister Strike",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "PrePullCombatSequence": [],
+  "BuffCombatSequence": [],
+  "PetMobId": null
+}

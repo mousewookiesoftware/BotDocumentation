@@ -1,0 +1,353 @@
+{
+  "Description": "Simple afflication warlock demo.",
+  "PlayerClass": "Warlock",
+  "InCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": true,
+      "Name": "Drain Life if below 30%",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Drain Life",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Player",
+            "Percent": 30,
+            "ConditionName": "Player Health Below 30%",
+            "Enabled": true,
+            "Type": "Health"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": true,
+      "Name": "Use Nightfall Proc",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Shadow Bolt",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 264571,
+            "DurationLeftInMs": 1000,
+            "HasAura": true,
+            "TargetType": "Player",
+            "ConditionName": "Has Nightfall",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 9999,
+      "RequiresFacing": false,
+      "Name": "Summon Voidwalker",
+      "SequenceNumber": 2,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Summon Voidwalker",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "PetMobId": 1860,
+            "IsAlive": false,
+            "ConditionName": "Is Voidwalker Alive",
+            "Enabled": true,
+            "Type": "Pet"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 40,
+      "RequiresFacing": true,
+      "Name": "Health Funnel",
+      "SequenceNumber": 3,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Health Funnel",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Pet",
+            "Percent": 90,
+            "ConditionName": "Pet Below 90%",
+            "Enabled": true,
+            "Type": "Health"
+          },
+          {
+            "PetMobId": 1860,
+            "IsAlive": true,
+            "ConditionName": "Pet Alive",
+            "Enabled": true,
+            "Type": "Pet"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": false,
+      "Name": "Agony",
+      "SequenceNumber": 4,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Agony",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 980,
+            "DurationLeftInMs": 3000,
+            "HasAura": false,
+            "TargetType": "Target",
+            "ConditionName": "Missing Agony if < 3000ms",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": false,
+      "Name": "Corruption",
+      "SequenceNumber": 5,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Corruption",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 146739,
+            "DurationLeftInMs": 2000,
+            "HasAura": false,
+            "TargetType": "Target",
+            "ConditionName": "Missing Corruption if < 2000ms",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": false,
+      "Name": "Unstable Affliction",
+      "SequenceNumber": 6,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Unstable Affliction",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "Value": 20,
+            "ConditionName": "Has 2 or more soul shards",
+            "Enabled": true,
+            "Type": "SpecialPower"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": true,
+      "Name": "Drain Life",
+      "SequenceNumber": 7,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Drain Life",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 38,
+      "RequiresFacing": true,
+      "Name": "Shadow bolt",
+      "SequenceNumber": 8,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Shadow Bolt",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "PrePullCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 100,
+      "RequiresFacing": false,
+      "Name": "Print out pre-combat",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "Lua",
+        "Code": "print(\"pre-combat 1\");",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": false,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "BuffCombatSequence": [
+    {
+      "Enabled": true,
+      "Name": "Summon Voidwalker",
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Summon Voidwalker",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "PetMobId": 1860,
+            "IsAlive": false,
+            "ConditionName": "Is Pet Dead",
+            "Enabled": true,
+            "Type": "Pet"
+          },
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "Value": 10,
+            "ConditionName": "Has 1 Soul Shard",
+            "Enabled": true,
+            "Type": "SpecialPower"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 0
+    },
+    {
+      "Enabled": true,
+      "Name": "Unending breath",
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Unending Breath",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 5697,
+            "DurationLeftInMs": 1000,
+            "HasAura": false,
+            "TargetType": "Player",
+            "ConditionName": "Unending Breath",
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 1
+    }
+  ],
+  "PetMobId": 1860
+}

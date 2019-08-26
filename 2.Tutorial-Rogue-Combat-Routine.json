@@ -1,0 +1,66 @@
+{
+  "Description": "2. Combat Routine Created In Tutorials",
+  "PlayerClass": "Rogue",
+  "InCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Eviscerate",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Eviscerate",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "Value": 3,
+            "ConditionName": "When > 3 combo points",
+            "Enabled": true,
+            "Type": "SpecialPower"
+          },
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "Value": 35,
+            "ConditionName": "When > 35 Energy",
+            "Enabled": true,
+            "Type": "Power"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 3,
+      "RequiresFacing": true,
+      "Name": "Sinister Strike",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Type": "CastSpellName",
+        "Code": "Sinister Strike",
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false
+    }
+  ],
+  "PrePullCombatSequence": [],
+  "BuffCombatSequence": [],
+  "PetMobId": null
+}
