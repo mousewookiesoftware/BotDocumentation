@@ -38,17 +38,17 @@ You can find the combat routine editor in the ``Bot Config Editor`` under the ``
 2. Click the 'New' button.
 3. Set the ``PlayerClass`` to Rogue from the dropdown list
 4. Open up the sequence editor window by clicking the 'Edit Combat Sequence' button.
-5. Add a sequence item by clicking the 'Add' button.
+5. Add a sequence item of type 'Cast Spell By Name' using the drop down and 'Add' button.
 6. At this point you should be displayed a screen something like this : 
-![alt text](https://i.imgur.com/6fmD79N.png "Combat Sequence Editor") 
+![alt text](https://imgur.com/VxjhVy9.png "Combat Sequence Editor") 
 
 Lots of settings which will be described in later sections, but for now lets just get the bot using the spell 'Sinister Strike'.
 1. Give the sequence item a more friendly name than 'Item Name' by setting the ``Name`` property to 'Sinister Strike'.
-2. In the ``Action`` properties settings, set property ``Code`` to 'Sinister Strike' and the ``Type`` to ``Cast Spell Name``. Leave the rest of the action properties as they are.
+2. In the ``Action`` properties settings, set property ``SpellName`` to 'Sinister Strike'. Leave the rest of the action properties as they are.
 3. Change the ``Range`` property to 3 - this is the distance the player needs to be within the target in order to perform the action.
 
 Once you have done this it should look something like : 
-![alt text](https://i.imgur.com/U6Ukhxg.png "Sinister Strike") 
+![alt text](https://imgur.com/vbc0XPK.png "Sinister Strike") 
 
 Now save the combat routine by closing the ``Combat Sequence Editor`` window, clicking ``Save As`` and giving it a name.
 Example ``.json`` file from following these steps : [1.Tutorial-Rogue-Combat-Routine.json](1.Tutorial-Rogue-Combat-Routine.json)
@@ -69,7 +69,7 @@ Lets add another spell to the combat routine, 'Eviscerate'! We want the bot to c
 3. With the ``Combat Sequence Editor`` open , click the ``Add`` button to add a second sequence item to the list.
 4. Go through the steps we did before but this time with a spell name of 'Eviscerate'.
 5. Select the new sequence item and click on the ``Condition`` dropdown button - this will open the ``Condition Editor`` :
-![alt text](https://i.imgur.com/fTDGpf1.png "Condition Editor") 
+![alt text](https://imgur.com/90wGXtt.png "Condition Editor") 
 6. With the ``Condition Editor`` window open (It has a title of 'Collection Control'), select 'Special Power Condition' from the dropdown and click 'Add' :
 7. Update the ``ConditionName`` property to something more friendly - 'When > 3 combo points'
 8. Update the ``ConditionValueType`` property to AboveOrEqual.
@@ -84,7 +84,7 @@ In the end you should have something like :
 Once you are done editing the conditions click the ``OK`` button at the bottom of the editor.
 
 Finally , before we are done we need to make the bot first try to 'Eviscerate' before casting 'Sinister Strike'. To do this use the up and down arrows on the ``Combat Sequence Editor`` to change the order of items. You should end up with a combat sequence looking like : 
-![alt text](https://i.imgur.com/7G04YHR.png "Power Condition")
+![alt text](https://imgur.com/gVDz888.png "Power Condition")
 
 Done! Close the editor window and click 'Save As'.
 Example ``.json`` file from following these steps : [2.Tutorial-Rogue-Combat-Routine.json](2.Tutorial-Rogue-Combat-Routine.json)
@@ -93,12 +93,19 @@ Run the combat bot again and you should see the bot now using ``Eviscerate`` - y
 
 ## 2. Item Properties
 
+Coming soon!
+
 ## 3. Conditions
+
+Coming soon!
 
 ## 4. Action Properties
 
+Coming soon!
 
+# Profile Creation Guide
 
+Coming Soon!
 
 
 

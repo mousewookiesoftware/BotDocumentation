@@ -9,11 +9,11 @@
       "Name": "Cheap Shot In Stealth",
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Cheap Shot",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Cheap Shot"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -49,11 +49,11 @@
       "Name": "Garrote",
       "SequenceNumber": 1,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Garrote",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Garrote"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -80,11 +80,11 @@
       "Name": "Eviscerate",
       "SequenceNumber": 2,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Eviscerate",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Eviscerate"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -109,11 +109,11 @@
       "Name": "Sinister Strike",
       "SequenceNumber": 3,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Sinister Strike",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Sinister Strike"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -140,11 +140,11 @@
       "Name": "Stealth ",
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Stealth",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Stealth"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -170,11 +170,11 @@
       "Enabled": true,
       "Name": "Deadly Poison",
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Deadly Poison",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Deadly Poison"
       },
       "Condition": {
         "EvaluationMethod": "And",

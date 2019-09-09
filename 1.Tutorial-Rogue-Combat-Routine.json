@@ -10,10 +10,10 @@
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
       "Action": {
-        "Type": "CastSpellName",
-        "Code": "Sinister Strike",
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Sinister Strike"
       },
       "Condition": {
         "EvaluationMethod": "And",

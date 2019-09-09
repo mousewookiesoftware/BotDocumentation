@@ -9,11 +9,11 @@
       "Name": "Eviscerate",
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Eviscerate",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Eviscerate"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -45,11 +45,11 @@
       "Name": "Sinister Strike",
       "SequenceNumber": 1,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Sinister Strike",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Sinister Strike"
       },
       "Condition": {
         "EvaluationMethod": "And",

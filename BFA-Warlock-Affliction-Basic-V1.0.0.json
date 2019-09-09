@@ -1,5 +1,5 @@
 {
-  "Description": "Simple afflication warlock demo.",
+  "Description": "Simple afflication warlock demo for BFA.",
   "PlayerClass": "Warlock",
   "InCombatSequence": [
     {
@@ -9,11 +9,11 @@
       "Name": "Drain Life if below 30%",
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Drain Life",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Drain Life"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -39,11 +39,11 @@
       "Name": "Use Nightfall Proc",
       "SequenceNumber": 1,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Shadow Bolt",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Shadow Bolt"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -70,11 +70,11 @@
       "Name": "Summon Voidwalker",
       "SequenceNumber": 2,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Summon Voidwalker",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Summon Voidwalker"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -99,11 +99,11 @@
       "Name": "Health Funnel",
       "SequenceNumber": 3,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Health Funnel",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Health Funnel"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -136,11 +136,11 @@
       "Name": "Agony",
       "SequenceNumber": 4,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Agony",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Agony"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -167,11 +167,11 @@
       "Name": "Corruption",
       "SequenceNumber": 5,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Corruption",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Corruption"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -198,11 +198,11 @@
       "Name": "Unstable Affliction",
       "SequenceNumber": 6,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Unstable Affliction",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Unstable Affliction"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -227,11 +227,11 @@
       "Name": "Drain Life",
       "SequenceNumber": 7,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Drain Life",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Drain Life"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -248,11 +248,11 @@
       "Name": "Shadow bolt",
       "SequenceNumber": 8,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Shadow Bolt",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Shadow Bolt"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -271,11 +271,9 @@
       "Name": "Print out pre-combat",
       "SequenceNumber": 0,
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "Lua",
-        "Code": "print(\"pre-combat 1\");",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "ActionType": "Lua",
+        "Lua": "print(\"pre-combat 1\");"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -291,11 +289,11 @@
       "Enabled": true,
       "Name": "Summon Voidwalker",
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Summon Voidwalker",
+	  "Action": {
         "CheckSpellCooldown": true,
-        "SpellBookType": "PlayerSpellBook"
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Summon Voidwalker"
       },
       "Condition": {
         "EvaluationMethod": "And",
@@ -324,11 +322,11 @@
       "Enabled": true,
       "Name": "Unending breath",
       "DelayInMilliseconds": 1000,
-      "Action": {
-        "Type": "CastSpellName",
-        "Code": "Unending Breath",
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PlayerSpellBook"
+	  "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Unending Breath"
       },
       "Condition": {
         "EvaluationMethod": "And",
