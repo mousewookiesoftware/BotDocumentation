@@ -105,7 +105,50 @@ Coming soon!
 
 # Profile Creation Guide
 
-Coming Soon!
+This guide will go through creating a simple profile for the grind bot.
+
+## Paths (Section 1)
+![alt text](https://imgur.com/N4sKnCD.png "Profile Editor")
+
+A grind bot profile will usually have 3 paths set (see section 1. in the image above) :
+1. ``Main Route`` The main route the bot will follow to search for mobs to kill. Only one of these can be set.
+2. ``Return to Town`` The path the bot should take to return to town for vendoring, repair and mailing. Only one of these can be set.
+3. ``Resurrection Route`` The path to use when returning from the graveyard. There can be multiple of these in a single profile in the case when there are multiple graveyards.
+
+These paths can be added and updated using the Add,Edit and Remove Path buttons.
+
+The when clicking the add or edit buttons the path recorder screen will be displayed :
+![alt text](https://imgur.com/41XGnxh.png "Path Recorder")
+
+1. First set the ``Path Purpose`` using the dropdown box (label 1.)
+2. Move to the place where you want to start the profile. For example the start of the main route for the bot.
+3. Hit the start recording button (label 2.) and begin moving the character around the route to follow for the grind route, this will record the players position every X Yards (set in the textbox) and add it into the waypoints list (label 3.)
+4. Once finished recording click the stop recording button.
+5. Hit the Save Path button!
+
+The ``Reverse`` button will reverse the entire path that has been recorded. Helpful for when creating ``Return To Town`` when you don't want to have to run back to the main route to start recording.
+
+The Optimize Path option will attempt to remove waypoints which are in a straight line , reducing the number of click to move calls made in game. The sliding bar is the level at which to optimize. Setting a value of 1 will mean no waypoints are trimmed. Suggested to only be used when recording a ``Return To Town`` path for long distances e.g. when moving along roads or open spaces.
+
+The ``Main Route`` is the only path that a grind profile requires to be set. However without setting a ``Resurrection Route`` and ``Return to Town`` path the bot will attempt to generate an path automatically to reach the destination which is more prone to getting stuck or moving through packs of enemies that will kill the player.
+
+
+## Vendor and Mailbox (Section 2)
+![alt text](https://imgur.com/N4sKnCD.png "Profile Editor")
+
+Next step to configure is the mailbox and buy, sell and repair vendors.
+
+1. Move the character in game to the mailbox that should be used, open the mailbox and click ``Set Mailbox`` position.
+2. Move to the buy vendor in game and target the vendor , then click ``Set Buy Vendor``.
+3. Repeat for sell and repair vendor.
+
+The ``Use ReturnToTown path`` checkbox should be ticked if you have a ``Return to Town`` path configured. If this is not checked the bot will automatically generate a path back to the vendor which is more likely to get stuck or move through enemy mobs.
+
+
+## Hostile List (Section 3)
+![alt text](https://imgur.com/N4sKnCD.png "Profile Editor")
+
+This is the list of mobs that the bot will search for while following the ``Main Route``. These can be added by targeting the mob in game and clicking the ``Add Enemy`` button or removed by selecting the row and hitting the ``Remove Enemy`` button.
 
 
 

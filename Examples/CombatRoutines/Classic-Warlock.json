@@ -4,10 +4,73 @@
   "InCombatSequence": [
     {
       "Enabled": true,
+      "Range": 99999,
+      "RequiresFacing": false,
+      "Name": "Use Lesser Healthstone",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Lua": "RunMacroText(\"/use Lesser Healthstone\")",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "Lua"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Player",
+            "Percent": 30,
+            "ConditionName": "Below 30% HP",
+            "Enabled": true,
+            "Type": "Health"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": false,
+      "Range": 28,
+      "RequiresFacing": true,
+      "Name": "Curse of weakness",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Curse of Weakness"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": 6205,
+            "DurationLeftInMs": null,
+            "HasAura": false,
+            "TargetType": "Target",
+            "ConditionName": "Missing curse of weakness",
+            "AuraMatchingMethod": "Any",
+            "CastByPlayer": true,
+            "Enabled": true,
+            "Type": "Aura"
+          }
+        ]
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
       "Range": 30,
       "RequiresFacing": false,
       "Name": "Pet Attack",
-      "SequenceNumber": 0,
+      "SequenceNumber": 2,
       "DelayInMilliseconds": 1000,
       "Action": {
         "Lua": "PetAttack();",
@@ -28,7 +91,7 @@
       "Range": 30,
       "RequiresFacing": true,
       "Name": "Health Funnel",
-      "SequenceNumber": 1,
+      "SequenceNumber": 3,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -106,7 +169,7 @@
       "Range": 30,
       "RequiresFacing": true,
       "Name": "Drain Soul",
-      "SequenceNumber": 2,
+      "SequenceNumber": 4,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -144,7 +207,7 @@
             "ConditionName": "Has Agony",
             "AuraMatchingMethod": "Any",
             "CastByPlayer": true,
-            "Enabled": true,
+            "Enabled": false,
             "Type": "Aura"
           },
           {
@@ -180,7 +243,7 @@
       "Range": 28,
       "RequiresFacing": true,
       "Name": "Immolate",
-      "SequenceNumber": 3,
+      "SequenceNumber": 5,
       "DelayInMilliseconds": 3000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -221,7 +284,7 @@
       "Range": 30,
       "RequiresFacing": true,
       "Name": "Corruption",
-      "SequenceNumber": 4,
+      "SequenceNumber": 6,
       "DelayInMilliseconds": 3000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -254,7 +317,7 @@
       "Range": 28,
       "RequiresFacing": false,
       "Name": "Curse of Agony",
-      "SequenceNumber": 5,
+      "SequenceNumber": 7,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -287,7 +350,7 @@
       "Range": 38,
       "RequiresFacing": true,
       "Name": "Shadow Bolt",
-      "SequenceNumber": 6,
+      "SequenceNumber": 8,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -313,10 +376,10 @@
     },
     {
       "Enabled": false,
-      "Range": 30,
+      "Range": 25,
       "RequiresFacing": true,
       "Name": "Drain Life",
-      "SequenceNumber": 7,
+      "SequenceNumber": 9,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -354,7 +417,7 @@
             "ConditionName": "Has Agony",
             "AuraMatchingMethod": "Any",
             "CastByPlayer": false,
-            "Enabled": true,
+            "Enabled": false,
             "Type": "Aura"
           },
           {
@@ -379,7 +442,7 @@
       "Range": 30,
       "RequiresFacing": true,
       "Name": "Life Tap",
-      "SequenceNumber": 8,
+      "SequenceNumber": 10,
       "DelayInMilliseconds": 1000,
       "Action": {
         "CheckSpellCooldown": true,
@@ -416,8 +479,8 @@
       "Range": 28,
       "RequiresFacing": true,
       "Name": "Use Wand",
-      "SequenceNumber": 9,
-      "DelayInMilliseconds": 1000,
+      "SequenceNumber": 11,
+      "DelayInMilliseconds": 500,
       "Action": {
         "ActionType": "UseWand"
       },
@@ -432,7 +495,7 @@
   ],
   "PrePullCombatSequence": [
     {
-      "Enabled": true,
+      "Enabled": false,
       "Range": 30,
       "RequiresFacing": true,
       "Name": "Open Clams",
@@ -440,6 +503,48 @@
       "DelayInMilliseconds": 1000,
       "Action": {
         "Lua": "RunMacroText(\"/use Small Barnacled Clam\")",
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "Lua"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 30,
+      "RequiresFacing": true,
+      "Name": "Corruption",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Corruption"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": []
+      },
+      "RequiresLineOfSight": true,
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false
+    },
+    {
+      "Enabled": true,
+      "Range": 28,
+      "RequiresFacing": true,
+      "Name": "Pet Attack",
+      "SequenceNumber": 2,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Lua": "PetAttack()",
         "CheckSpellCooldown": false,
         "SpellBookType": "PlayerSpellBook",
         "ActionType": "Lua"
@@ -506,13 +611,13 @@
         "CheckSpellCooldown": true,
         "SpellBookType": "PlayerSpellBook",
         "ActionType": "CastSpellName",
-        "SpellName": "Demon Skin"
+        "SpellName": "Demon Armor"
       },
       "Condition": {
         "EvaluationMethod": "And",
         "Conditions": [
           {
-            "SpellAuraId": 687,
+            "SpellAuraId": 706,
             "DurationLeftInMs": null,
             "HasAura": false,
             "TargetType": "Player",
@@ -574,6 +679,40 @@
     },
     {
       "Enabled": true,
+      "Name": "Consume Shadows Voidwalker",
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "CheckSpellCooldown": false,
+        "SpellBookType": "PetSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Consume Shadows"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "PetMobId": 1860,
+            "IsAlive": true,
+            "ConditionName": "Voidwalker Alive",
+            "Enabled": true,
+            "Type": "Pet"
+          },
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Pet",
+            "Percent": 70,
+            "ConditionName": "pet Below 70% hp",
+            "Enabled": true,
+            "Type": "Health"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 3
+    },
+    {
+      "Enabled": true,
       "Name": "Health Funnel Void Walker",
       "DelayInMilliseconds": 1000,
       "Action": {
@@ -612,40 +751,6 @@
       },
       "OnGcd": true,
       "IgnoreWaitForCastOrChannel": false,
-      "SequenceNumber": 3
-    },
-    {
-      "Enabled": true,
-      "Name": "Consume Shadows Voidwalker",
-      "DelayInMilliseconds": 1000,
-      "Action": {
-        "CheckSpellCooldown": false,
-        "SpellBookType": "PetSpellBook",
-        "ActionType": "CastSpellName",
-        "SpellName": "Consume Shadows"
-      },
-      "Condition": {
-        "EvaluationMethod": "And",
-        "Conditions": [
-          {
-            "PetMobId": 1860,
-            "IsAlive": true,
-            "ConditionName": "Voidwalker Alive",
-            "Enabled": true,
-            "Type": "Pet"
-          },
-          {
-            "ConditionValueType": "Below",
-            "TargetType": "Pet",
-            "Percent": 70,
-            "ConditionName": "pet Below 70% hp",
-            "Enabled": true,
-            "Type": "Health"
-          }
-        ]
-      },
-      "OnGcd": true,
-      "IgnoreWaitForCastOrChannel": false,
       "SequenceNumber": 4
     },
     {
@@ -677,6 +782,47 @@
       "OnGcd": true,
       "IgnoreWaitForCastOrChannel": false,
       "SequenceNumber": 5
+    },
+    {
+      "Enabled": true,
+      "Name": "Create Healthstone",
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "CheckSpellCooldown": true,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Create Healthstone (Lesser)"
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              6265
+            ],
+            "Count": 1,
+            "ConditionName": ">= 1 soul shard",
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount"
+          },
+          {
+            "ConditionValueType": "Equal",
+            "ItemIds": [
+              5511
+            ],
+            "Count": 0,
+            "ConditionName": "0 health stones",
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 6
     }
   ],
   "PetMobId": 1860
