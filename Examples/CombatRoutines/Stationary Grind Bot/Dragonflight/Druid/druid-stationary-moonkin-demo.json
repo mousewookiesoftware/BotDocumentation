@@ -1,0 +1,770 @@
+{
+  "Description": "",
+  "PlayerClass": "Druid",
+  "InCombatSequence": [
+    {
+      "Enabled": true,
+      "Range": 99999,
+      "RequiresFacing": false,
+      "Name": "Use strange sack",
+      "SequenceNumber": 0,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "Lua": "UseItemByName(\"Curiously-Shaped Stomach\")",
+        "WaitForCastStart": false,
+        "RequiresTerrainClick": false,
+        "ActionType": "Lua",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              201462
+            ],
+            "Count": 1,
+            "Name": null,
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount",
+            "ConditionName": "Item Count Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": true,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 999,
+      "RequiresFacing": false,
+      "Name": "Regrowth",
+      "SequenceNumber": 1,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "UseSmartRangeDetection": false,
+        "RequiresTerrainClick": false,
+        "CheckSpellCooldown": false,
+        "IsChanneled": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Regrowth below 50% hp",
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Player",
+            "Percent": 50,
+            "Enabled": true,
+            "Type": "Health",
+            "ConditionName": "Health Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 99999,
+      "RequiresFacing": false,
+      "Name": "Renewal",
+      "SequenceNumber": 2,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "UseSmartRangeDetection": false,
+        "RequiresTerrainClick": false,
+        "CheckSpellCooldown": true,
+        "IsChanneled": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Renewal",
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "Below",
+            "TargetType": "Player",
+            "Percent": 40,
+            "Enabled": true,
+            "Type": "Health",
+            "ConditionName": "Health Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 99999,
+      "RequiresFacing": false,
+      "Name": "mark of the wild",
+      "SequenceNumber": 3,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "UseSmartRangeDetection": false,
+        "RequiresTerrainClick": false,
+        "CheckSpellCooldown": false,
+        "IsChanneled": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Mark of the wild",
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": null,
+            "AuraName": "Mark of the wild",
+            "DurationLeftInMs": null,
+            "HasAura": false,
+            "TargetType": "Player",
+            "AuraMatchingMethod": "Any",
+            "CastByPlayer": true,
+            "StackConditionValueType": "AboveOrEqual",
+            "StackCount": null,
+            "Enabled": true,
+            "Type": "Aura",
+            "ConditionName": "Aura Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 100,
+      "RequiresFacing": false,
+      "Name": "Moonkin Form",
+      "SequenceNumber": 4,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "UseSmartRangeDetection": false,
+        "RequiresTerrainClick": false,
+        "CheckSpellCooldown": false,
+        "IsChanneled": false,
+        "SpellBookType": "PlayerSpellBook",
+        "ActionType": "CastSpellName",
+        "SpellName": "Moonkin Form",
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": null,
+            "AuraName": "Moonkin Form",
+            "DurationLeftInMs": null,
+            "HasAura": false,
+            "TargetType": "Player",
+            "AuraMatchingMethod": "Any",
+            "CastByPlayer": true,
+            "StackConditionValueType": "AboveOrEqual",
+            "StackCount": null,
+            "Enabled": true,
+            "Type": "Aura",
+            "ConditionName": "Aura Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 50,
+      "RequiresFacing": false,
+      "Name": "Swap to another target attacking me when target has both moonfire and sunfire",
+      "SequenceNumber": 5,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "CheckHostileForMatchingConditions": {
+          "EvaluationMethod": "Or",
+          "Conditions": [
+            {
+              "SpellAuraId": null,
+              "AuraName": "Moonfire",
+              "DurationLeftInMs": null,
+              "HasAura": false,
+              "TargetType": "Target",
+              "AuraMatchingMethod": "Any",
+              "CastByPlayer": true,
+              "StackConditionValueType": "AboveOrEqual",
+              "StackCount": null,
+              "Enabled": true,
+              "Type": "Aura",
+              "ConditionName": "Missing Moonfire"
+            },
+            {
+              "SpellAuraId": null,
+              "AuraName": "Sunfire",
+              "DurationLeftInMs": null,
+              "HasAura": false,
+              "TargetType": "Target",
+              "AuraMatchingMethod": "Any",
+              "CastByPlayer": true,
+              "StackConditionValueType": "AboveOrEqual",
+              "StackCount": null,
+              "Enabled": true,
+              "Type": "Aura",
+              "ConditionName": "Missing sunfire"
+            }
+          ]
+        },
+        "IncludeCreatureTypes": [
+          "Pet",
+          "Creature",
+          "Player"
+        ],
+        "Range": 40.0,
+        "OnlyConsiderThoseOnThreatList": true,
+        "OnlyConsiderThoseAttackingMe": false,
+        "OnlyConsiderThoseDirectlyAttackingMe": false,
+        "ActionType": "SwapHostileInCombatTargetAction",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "SpellAuraId": null,
+            "AuraName": "Moonfire",
+            "DurationLeftInMs": null,
+            "HasAura": true,
+            "TargetType": "Target",
+            "AuraMatchingMethod": "Any",
+            "CastByPlayer": true,
+            "StackConditionValueType": "AboveOrEqual",
+            "StackCount": null,
+            "Enabled": true,
+            "Type": "Aura",
+            "ConditionName": "Moonfire"
+          },
+          {
+            "SpellAuraId": null,
+            "AuraName": "Sunfire",
+            "DurationLeftInMs": null,
+            "HasAura": true,
+            "TargetType": "Target",
+            "AuraMatchingMethod": "Any",
+            "CastByPlayer": true,
+            "StackConditionValueType": "AboveOrEqual",
+            "StackCount": null,
+            "Enabled": true,
+            "Type": "Aura",
+            "ConditionName": "Sunfire"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": false,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 9999,
+      "RequiresFacing": false,
+      "Name": "Post Sequence - Use Combat",
+      "SequenceNumber": 6,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "ActionType": "ConditionBranch",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": [
+          {
+            "Enabled": true,
+            "Range": 55,
+            "RequiresFacing": false,
+            "Name": "Fury of Elune AOE when 4 mobs near player",
+            "SequenceNumber": 0,
+            "DelayInMilliseconds": 1000,
+            "Action": {
+              "UseSmartRangeDetection": false,
+              "RequiresTerrainClick": false,
+              "CheckSpellCooldown": true,
+              "IsChanneled": false,
+              "SpellBookType": "PlayerSpellBook",
+              "ActionType": "CastSpellName",
+              "SpellName": "Fury of Elune",
+              "PostExecuteSequence": []
+            },
+            "Condition": {
+              "EvaluationMethod": "And",
+              "Conditions": [
+                {
+                  "NumberOfCreatures": 4,
+                  "IncludeCreatureTypes": [
+                    "Pet",
+                    "Creature",
+                    "Player"
+                  ],
+                  "Range": 8.0,
+                  "OnlyConsiderThoseOnThreatList": false,
+                  "OnlyConsiderThoseAttackingMe": false,
+                  "OnlyConsiderThoseAttackingMeDirectly": false,
+                  "InRangeOfTargetType": "Player",
+                  "Not": false,
+                  "Enabled": true,
+                  "Type": "NumberOfHostileCreaturesInRange",
+                  "ConditionName": "Number Of Hostile Creatures In Range"
+                },
+                {
+                  "ConditionValueType": "Below",
+                  "TargetType": "Target",
+                  "Range": 10.0,
+                  "Enabled": true,
+                  "Type": "Range",
+                  "ConditionName": "Range Condition"
+                }
+              ]
+            },
+            "RequiresLineOfSight": true,
+            "TargetMode": "Default",
+            "DebugConditions": false,
+            "TargetPriority": [],
+            "OnGcd": true,
+            "IgnoreWaitForCastOrChannel": false,
+            "MoveAwayDistance": 10,
+            "MoveAwayFromTargetAfterAction": false,
+            "UseBackPedalMoveAway": false,
+            "RandomlyJumpBeforeAction": false,
+            "RandomJumpPercentage": 20,
+            "MinimumTimeInSecondsBetweenRandomJump": 3
+          },
+          {
+            "Enabled": true,
+            "Range": 47,
+            "RequiresFacing": false,
+            "Name": "Moonfire",
+            "SequenceNumber": 1,
+            "DelayInMilliseconds": 1000,
+            "Action": {
+              "UseSmartRangeDetection": true,
+              "RequiresTerrainClick": false,
+              "CheckSpellCooldown": true,
+              "IsChanneled": false,
+              "SpellBookType": "PlayerSpellBook",
+              "ActionType": "CastSpellName",
+              "SpellName": "Moonfire",
+              "PostExecuteSequence": []
+            },
+            "Condition": {
+              "EvaluationMethod": "And",
+              "Conditions": [
+                {
+                  "SpellAuraId": null,
+                  "AuraName": "Moonfire",
+                  "DurationLeftInMs": null,
+                  "HasAura": false,
+                  "TargetType": "Target",
+                  "AuraMatchingMethod": "Any",
+                  "CastByPlayer": true,
+                  "StackConditionValueType": "AboveOrEqual",
+                  "StackCount": null,
+                  "Enabled": true,
+                  "Type": "Aura",
+                  "ConditionName": "Aura Condition"
+                },
+                {
+                  "ConditionValueType": "Below",
+                  "TargetType": "Target",
+                  "Range": 50.0,
+                  "Enabled": true,
+                  "Type": "Range",
+                  "ConditionName": "Range Condition"
+                }
+              ]
+            },
+            "RequiresLineOfSight": true,
+            "TargetMode": "Default",
+            "DebugConditions": false,
+            "TargetPriority": [],
+            "OnGcd": true,
+            "IgnoreWaitForCastOrChannel": false,
+            "MoveAwayDistance": 10,
+            "MoveAwayFromTargetAfterAction": false,
+            "UseBackPedalMoveAway": false,
+            "RandomlyJumpBeforeAction": false,
+            "RandomJumpPercentage": 20,
+            "MinimumTimeInSecondsBetweenRandomJump": 3
+          },
+          {
+            "Enabled": true,
+            "Range": 46,
+            "RequiresFacing": false,
+            "Name": "Sunfire",
+            "SequenceNumber": 2,
+            "DelayInMilliseconds": 1000,
+            "Action": {
+              "UseSmartRangeDetection": false,
+              "RequiresTerrainClick": false,
+              "CheckSpellCooldown": false,
+              "IsChanneled": false,
+              "SpellBookType": "PlayerSpellBook",
+              "ActionType": "CastSpellName",
+              "SpellName": "Sunfire",
+              "PostExecuteSequence": []
+            },
+            "Condition": {
+              "EvaluationMethod": "And",
+              "Conditions": [
+                {
+                  "SpellAuraId": null,
+                  "AuraName": "Sunfire",
+                  "DurationLeftInMs": null,
+                  "HasAura": false,
+                  "TargetType": "Target",
+                  "AuraMatchingMethod": "Any",
+                  "CastByPlayer": true,
+                  "StackConditionValueType": "AboveOrEqual",
+                  "StackCount": null,
+                  "Enabled": true,
+                  "Type": "Aura",
+                  "ConditionName": "Aura Condition"
+                },
+                {
+                  "ConditionValueType": "Below",
+                  "TargetType": "Target",
+                  "Range": 50.0,
+                  "Enabled": true,
+                  "Type": "Range",
+                  "ConditionName": "Range Condition"
+                }
+              ]
+            },
+            "RequiresLineOfSight": true,
+            "TargetMode": "Default",
+            "DebugConditions": false,
+            "TargetPriority": [],
+            "OnGcd": true,
+            "IgnoreWaitForCastOrChannel": false,
+            "MoveAwayDistance": 10,
+            "MoveAwayFromTargetAfterAction": false,
+            "UseBackPedalMoveAway": false,
+            "RandomlyJumpBeforeAction": false,
+            "RandomJumpPercentage": 20,
+            "MinimumTimeInSecondsBetweenRandomJump": 3
+          },
+          {
+            "Enabled": true,
+            "Range": 99999,
+            "RequiresFacing": false,
+            "Name": "Starfall",
+            "SequenceNumber": 3,
+            "DelayInMilliseconds": 1000,
+            "Action": {
+              "UseSmartRangeDetection": false,
+              "RequiresTerrainClick": false,
+              "CheckSpellCooldown": false,
+              "IsChanneled": false,
+              "SpellBookType": "PlayerSpellBook",
+              "ActionType": "CastSpellName",
+              "SpellName": "Starfall",
+              "PostExecuteSequence": []
+            },
+            "Condition": {
+              "EvaluationMethod": "And",
+              "Conditions": [
+                {
+                  "InCombat": true,
+                  "TargetType": "Target",
+                  "Enabled": true,
+                  "Type": "Combat",
+                  "ConditionName": "Is In Combat"
+                },
+                {
+                  "ConditionValueType": "AboveOrEqual",
+                  "Value": 50,
+                  "Enabled": true,
+                  "Type": "SpecialPower2",
+                  "ConditionName": "Special Power Condition"
+                }
+              ]
+            },
+            "RequiresLineOfSight": true,
+            "TargetMode": "Default",
+            "DebugConditions": false,
+            "TargetPriority": [],
+            "OnGcd": true,
+            "IgnoreWaitForCastOrChannel": false,
+            "MoveAwayDistance": 10,
+            "MoveAwayFromTargetAfterAction": false,
+            "UseBackPedalMoveAway": false,
+            "RandomlyJumpBeforeAction": false,
+            "RandomJumpPercentage": 20,
+            "MinimumTimeInSecondsBetweenRandomJump": 3
+          }
+        ]
+      },
+      "Condition": {
+        "EvaluationMethod": "Or",
+        "Conditions": [
+          {
+            "Enabled": true,
+            "Type": "True",
+            "ConditionName": "True Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 99999,
+      "RequiresFacing": false,
+      "Name": "Use Skinning Level Item - 1",
+      "SequenceNumber": 7,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "ItemId": 202016,
+        "HasCastTime": true,
+        "RequiresTerrainClick": false,
+        "ActionType": "UseItem",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              202016
+            ],
+            "Count": 1,
+            "Name": null,
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount",
+            "ConditionName": "Item Count Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 999999,
+      "RequiresFacing": false,
+      "Name": "Use Skinning Level Item - 2",
+      "SequenceNumber": 8,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "ItemId": 198841,
+        "HasCastTime": true,
+        "RequiresTerrainClick": false,
+        "ActionType": "UseItem",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              198841
+            ],
+            "Count": 1,
+            "Name": null,
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount",
+            "ConditionName": "Item Count Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    },
+    {
+      "Enabled": true,
+      "Range": 999999,
+      "RequiresFacing": false,
+      "Name": "Use Skinning Level Item - 2",
+      "SequenceNumber": 9,
+      "DelayInMilliseconds": 1000,
+      "Action": {
+        "ItemId": 198837,
+        "HasCastTime": true,
+        "RequiresTerrainClick": false,
+        "ActionType": "UseItem",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              198837
+            ],
+            "Count": 1,
+            "Name": null,
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount",
+            "ConditionName": "Item Count Condition"
+          }
+        ]
+      },
+      "RequiresLineOfSight": false,
+      "TargetMode": "Default",
+      "DebugConditions": false,
+      "TargetPriority": [],
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "MoveAwayDistance": 10,
+      "MoveAwayFromTargetAfterAction": false,
+      "UseBackPedalMoveAway": false,
+      "RandomlyJumpBeforeAction": false,
+      "RandomJumpPercentage": 20,
+      "MinimumTimeInSecondsBetweenRandomJump": 3
+    }
+  ],
+  "PrePullCombatSequence": [],
+  "BuffCombatSequence": [
+    {
+      "Enabled": true,
+      "Name": "Use strange sack",
+      "DelayInMilliseconds": 1000,
+      "TargetMode": "Default",
+      "DebugConditions": true,
+      "Action": {
+        "Lua": "UseItemByName(\"Curiously-Shaped Stomach\")",
+        "WaitForCastStart": false,
+        "RequiresTerrainClick": false,
+        "ActionType": "Lua",
+        "UseSmartRangeDetection": false,
+        "PostExecuteSequence": []
+      },
+      "Condition": {
+        "EvaluationMethod": "And",
+        "Conditions": [
+          {
+            "ConditionValueType": "AboveOrEqual",
+            "ItemIds": [
+              201462
+            ],
+            "Count": 1,
+            "Name": null,
+            "Enabled": true,
+            "MatchingMethod": "Any",
+            "Type": "ItemCount",
+            "ConditionName": "Item Count Condition"
+          }
+        ]
+      },
+      "OnGcd": true,
+      "IgnoreWaitForCastOrChannel": false,
+      "SequenceNumber": 0,
+      "TargetPriority": []
+    }
+  ],
+  "PetMobId": null,
+  "PetMobIds": []
+}
